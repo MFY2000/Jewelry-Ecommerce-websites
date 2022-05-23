@@ -98,12 +98,6 @@ height: 1px;
 }
 
 
-/* .user_cart_logo ul li {
-  list-style: none;
-  display: inline-block;
-  margin: 6px;
-} */
-
 
 /* header end*/
 
@@ -113,7 +107,7 @@ height: 1px;
 .carousel-inner .item:nth-child(1) {
     height: 90vh;
     width: 100%;
-    background-image: url("../images/banner.png");
+    background-image: url("../images/Banner/banner.png");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -121,7 +115,7 @@ height: 1px;
 .carousel-inner .item:nth-child(2) {
     height: 90vh;
     width: 100%;
-    background-image: url("../images/conactbanner3.jpg");
+    background-image: url("../images/Banner/conactbanner3.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -129,7 +123,7 @@ height: 1px;
 .carousel-inner .item:nth-child(3) {
     height: 90vh;
     width: 100%;
-    background-image: url("../images/aboutBanner2.jpg");
+    background-image: url("../images/Banner/aboutBanner2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -503,23 +497,26 @@ footer .container .row .col-md-12 ul li a i:hover {
 }
 
 /* Bannner */
-.aboutus{
-    background-image: url("../images/aboutBanner2.jpg");
+.about-us{
+    background-image: url("../images/Banner/aboutbanner.jpg");
 }
-.contactus{
-    background-image: url("../images/conactbanner3.jpg");
+.contact-us{
+    background-image: url("../images/Banner/conactbanner3.jpg");
 }
 .shop{
-    background-image: url("../images/aboutbanner.jpg");
+    background-image: url("../images/Banner/aboutbanner.jpg");
 }
 
+.products-cart{ 
+    background-image: url("../images/Banner/conactbanner3.jpg");
+}
 
 /* contact page */
 
 .products-cart {
     height: 50vh;
     width: 100%;
-    background-image: url("../images/conactbanner3.jpg");
+    background-image: url("../images/Banner/conactbanner3.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -556,7 +553,7 @@ footer .container .row .col-md-12 ul li a i:hover {
 .check-out {
     height: 50vh;
     width: 100%;
-    background-image: url("../images/aboutbanner.jpg");
+    background-image: url("../images/Banner/aboutbanner.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
@@ -619,7 +616,7 @@ footer .container .row .col-md-12 ul li a i:hover {
 .product-detials {
     height: 50vh;
     width: 100%;
-    background-image: url("../images/conactbanner3.jpg");
+    background-image: url("../images/Banner/conactbanner3.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -760,7 +757,7 @@ footer .container .row .col-md-12 ul li a i:hover {
 .cart_banner {
     height: 50vh;
     width: 100%;
-    background-image: url("../images/aboutBanner2.jpg");
+    background-image: url("../images/Banner/aboutBanner2.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -1073,7 +1070,7 @@ footer .container .row .col-md-12 ul li a i:hover {
 .login {
     height: 50vh;
     width: 100%;
-    background-image: url("../images/conactbanner3.jpg");
+    background-image: url("../images/Banner/conactbanner3.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -1170,7 +1167,7 @@ footer .container .row .col-md-12 ul li a i:hover {
 .termsandcondition {
     height: 60vh;
     width: 100%;
-    background-image: url("../images/banner.png");
+    background-image: url("../images/Banner/banner.png");
     background-repeat: no-repeat;
     background-size: cover;
 }
