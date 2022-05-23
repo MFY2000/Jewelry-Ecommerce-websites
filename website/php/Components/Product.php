@@ -6,7 +6,7 @@ function getProduct($root,$NoOfProduct) {
   
   $productCard = "
   <div class='col-md-3 col-sm-6 col-xs-6'>
-    <img src='$root/images/productPic1.png' alt='product pic 1'>
+    <img src='$root/images/Product/productPic1.png' alt='product pic 1'>
     <p>your Heading here</p>
   </div>";
   
