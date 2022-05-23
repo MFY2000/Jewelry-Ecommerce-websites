@@ -5,7 +5,7 @@ function getCategory($NoOfCategory) {
   $CategoryCard = "
     
   <div class='col-md-4 col-sm-6'>
-      <img src='./images/categoriesPic1.png' alt='categories pic 1'>
+      <img src='./images/Product/categoriesPic1.png' alt='categories pic 1'>
   </div>";
   
   $Category = "";
