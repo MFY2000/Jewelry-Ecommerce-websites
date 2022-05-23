@@ -9,16 +9,16 @@
                 <div class='col-md-6'>
                     <div>
                         <div class='slider slider-for'>
-                            <img src='$root/images/productPic1.png' alt='product pic 1'>
-                            <img src='$root/images/productPic2.png' alt='product pic 1'>
-                            <img src='$root/images/productPic3.png' alt='product pic 1'>
-                            <img src='$root/images/productPic4.png' alt='product pic 1' />
+                            <img src='$root/images/Product/productPic1.png' alt='product pic 1'>
+                            <img src='$root/images/Product/productPic2.png' alt='product pic 1'>
+                            <img src='$root/images/Product/productPic3.png' alt='product pic 1'>
+                            <img src='$root/images/Product/productPic4.png' alt='product pic 1' />
                         </div>
                         <div class='productMoreImages slider slider-nav'>
-                            <img src='$root/images/productPic1.png' alt='product pic 1' />
-                            <img src='$root/images/productPic2.png' alt='product pic 1' />
-                            <img src='$root/images/productPic3.png' alt='product pic 1' />
-                            <img src='$root/images/productPic4.png' alt='product pic 1' />
+                            <img src='$root/images/Product/productPic1.png' alt='product pic 1' />
+                            <img src='$root/images/Product/productPic2.png' alt='product pic 1' />
+                            <img src='$root/images/Product/productPic3.png' alt='product pic 1' />
+                            <img src='$root/images/Product/productPic4.png' alt='product pic 1' />
                         </div>
                     </div>
                 </div>
