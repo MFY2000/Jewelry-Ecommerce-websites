@@ -1,7 +1,7 @@
 
 <?php include '..\php\MainBody.php'; 
     
-$index = new PageBody("aboutus", "..");
+$index = new PageBody("about-us", "..");
 $index->navBar();
 $index->banner();
 $index->aboutus();
