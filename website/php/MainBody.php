@@ -17,6 +17,7 @@ class PageBody {
     
     
     include "$this->root\php\Services\DBConnection.php"; 
+    
 
     foreach ($GLOBALS["import_Module"] as $key => $value) {
       require_once("$this->root/php/Components/$value.php");
@@ -113,13 +114,16 @@ class PageBody {
   }
 
   function detailsSection(){
-    $this->template = $this->template.getDetails();
+    $this->template = $this->template.getDetails($this->root);
   }
 
   function cartSection(){
     $this->template = $this->template.getCart();
   }
 
+  function checkOutSection(){
+    $this->template = $this->template.getCheckOut();
+  }
 }
 
 ?>
