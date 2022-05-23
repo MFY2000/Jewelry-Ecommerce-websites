@@ -1,6 +1,5 @@
 <?php
-  include '..\DBConnection.php'; 
-  include '..\Query\InsertQuery.php'; 
+  include '..\Query\GetQuery.php'; 
   
   $message = "";
   $error = true; 
@@ -10,21 +9,21 @@
   }else if(!isset($_POST["password"])) {
     $message = "phone number is required";
   }else{
-    $query = $insertQuery_contactUs.("('".$_POST["email"]."','".$_POST["password"]."')");
     
-    $result = $conn->query($query);
     
-    if($result){
-      $message = "Successfully login";
+    if(getUser($_POST["email"], $_POST["password"])){
+      $message = "Successfully Login";
       $error = false;
     }else{
       $message = "Error".$conn->error;
+      $error = false;
     }
   }
-  session_start();
 
-  $_SESSION["Login"]["Uid"] = $message;
   $_SESSION["Login"]["message"] = $message;
-  $_SESSION["Login"]["error"] = $message;
-  header("Location: ..\..\..\Pages\contactus.php");
+  $_SESSION["Login"]["error"] = $error;
+  
+  echo $_SESSION["Login"]["id"];
+  
+  // header("Location: ..\..\..\index.php");
 ?>
