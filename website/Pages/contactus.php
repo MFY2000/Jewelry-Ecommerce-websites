@@ -4,7 +4,7 @@
     
 
 
-    $index = new PageBody("contactus", "..");
+    $index = new PageBody("contact-us", "..");
     $index->navBar();
     $index->banner();
     $index->contactusSection();
@@ -12,7 +12,12 @@
     
     echo $index->body();
     
-    $_SESSION["Contact"]["message"] = "";
+    if(isset($_SESSION["Contact"]["message"])){
+        $type = $_SESSION["Contact"]["error"]  ? "succes" : "error";
+        $index->alertSection($_SESSION["Contact"]["message"], $type);
+    }
+
+    unset($_SESSION["Contact"]["message"]);
 
     ?>
     
