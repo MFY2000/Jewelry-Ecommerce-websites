@@ -23,11 +23,13 @@
       $error = false;
     }else{
       $message = "Error".$conn->error;
+      $error = true;
+
     }
   }
   session_start();
 
   $_SESSION["Contact"]["message"] = $message;
-  $_SESSION["Contact"]["error"] = $message;
+  $_SESSION["Contact"]["error"] = $error;
   header("Location: ..\..\..\Pages\contactus.php");
 ?>
