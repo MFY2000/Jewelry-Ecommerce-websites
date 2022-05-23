@@ -8,7 +8,9 @@
             <div class='row mini_banner_row'>
                 <div class='col-md-6 col-md-offset-3'>
                     <div class='mini_banner_center text-center'>
-                        <h1>$name</h1>
+                        <h1>".
+                            ucfirst((str_replace('-',' ',$name)))                      
+                        ."</h1>
                     </div>
                 </div>
             </div>
