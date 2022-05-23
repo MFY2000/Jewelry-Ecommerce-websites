@@ -6,7 +6,7 @@
       <div class='row'>
           <div class='col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12'>
               <div class='auth'>
-                  <form method='post' action=''>
+                  <form  method='post' action='..\php\Services\Form\loginForm.php'>
                       <h1>Login</h1>
                       <input class='contactInput' name='email' type='email' placeholder='Email Address'><br>
                       <input class='contactInput' name='password' type='password' placeholder='Password'><br>
