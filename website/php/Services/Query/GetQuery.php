@@ -1,7 +1,7 @@
 <?php
-  include("../DBConnection.php");
 
   $getQuery = "select `uid` from `user` where  ";
+  $getQuery_product = "select `PID`,`Title` from `product` limit ";
 
 
   function getUser($email, $password){
