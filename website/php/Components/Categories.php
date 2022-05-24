@@ -1,22 +1,22 @@
 <?php
 
 
-function getCategory($NoOfCategory) {
-  $CategoryCard = "
-    
-  <div class='col-md-4 col-sm-6'>
-      <img src='./images/Product/categoriesPic1.png' alt='categories pic 1'>
-  </div>";
-  
+function getCategory($root,$result) {
   $Category = "";
-  for ($i=0; $i < $NoOfCategory; $i++)
-    $Category = $Category. $CategoryCard ;
+    
+  if ($result->num_rows > 0) {
+    while($row = $result -> fetch_row()) {
+      $Category = $Category."<div  class='col-md-4 col-sm-6' id='".$row[0]."'>
+          <img src='$root/images/Product/".$row[2]."' alt='".$row[1]."'>
+      </div>";
+    }
+  }
   return $Category;
 }
 
 
 
-function CategoriesSection($root,$NoOfCategory){
+function CategoriesSection($root,$result){
   return "
   <!-- categories start -->
     <section class='categories'>
@@ -31,7 +31,7 @@ function CategoriesSection($root,$NoOfCategory){
               </div>
           </div>
           <div class='row'>
-              ".getCategory($NoOfCategory)."
+              ".getCategory($root,$result)."
           </div>
       </div>
     </section>
