@@ -15,9 +15,11 @@ class PageBody {
     $this->root = $path;
     $this->template = "";
     
+    include "$this->root\php\Services\DB.php"; 
+    include "$this->root\php\Services\Query\GetQuery.php";
     
-    include "$this->root\php\Services\DBConnection.php"; 
-    
+    $this->db_instant = new db_Connection();
+
 
     foreach ($GLOBALS["import_Module"] as $key => $value) {
       require_once("$this->root/php/Components/$value.php");
@@ -74,11 +76,19 @@ class PageBody {
   }
 
   function product(){    
-    $this->template = $this->template.ProductSection($this->root,4);
+    $query = "SELECT `product`.`PID`,`product`.`Title`,`product_images`.`imageName` FROM `product` INNER JOIN `product_images` ON `product`.PID = `product_images`.PID LIMIT 0,4";
+    $result = $this->db_instant->conn->query($query);
+    
+
+    $this->template = $this->template.ProductSection($this->root,$result);
   }
 
   function categories() {    
-    $this->template = $this->template.CategoriesSection($this->root,3);
+    $query = "SELECT `categories`.`CID`, `categories`.`Title`, `product_images`.`imageName` FROM `categories` INNER JOIN `product` ON `product`.CID = `categories`.CID INNER JOIN `product_images` ON `product`.PID = `product_images`.PID LIMIT 0,3";
+    $result = $this->db_instant->conn->query($query);
+    
+    
+    $this->template = $this->template.CategoriesSection($this->root,$result);
   }
 
   function newsLetter() {
