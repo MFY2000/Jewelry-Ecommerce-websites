@@ -1,22 +1,22 @@
 <?php 
+include "$this->root\php\Services\DBConnection.php"; 
 
-
-
-function getProduct($root,$NoOfProduct) {
-  
-  $productCard = "
-  <div class='col-md-3 col-sm-6 col-xs-6'>
-    <img src='$root/images/Product/productPic1.png' alt='product pic 1'>
-    <p>your Heading here</p>
-  </div>";
-  
+function getProduct($root,$result) {
+    
     $Product = "";
-    for ($i=0; $i < $NoOfProduct; $i++)
-      $Product = $Product.$productCard;
+    
+    if ($result->num_rows > 0) {
+      while($row = $result -> fetch_row()) {
+        $Product = $Product."<div class='col-md-3 col-sm-6 col-xs-6' id='".$row[0]."'>
+            <img src='$root/images/Product/".$row[2]."' alt='product pic 1'>
+            <p>".$row[1]."</p>
+        </div>";
+      }
+    }
     return $Product;
   }
 
-  function ProductSection($root,$NoOfProduct){
+  function ProductSection($root,$result){
     return " <!-- product start -->
       <section class='product'>
           <div class='container'>
@@ -30,7 +30,7 @@ function getProduct($root,$NoOfProduct) {
                   </div>
               </div>
               <div class='row prrow'>
-                  ".getProduct($root,$NoOfProduct)."
+                  ".getProduct($root,$result)."
               </div>
               <div class='row'>
                   <div class='col-md-12'>
