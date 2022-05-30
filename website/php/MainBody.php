@@ -15,8 +15,9 @@ class PageBody {
     $this->root = $path;
     $this->template = "";
     
-    include "$this->root\php\Services\DB.php"; 
-    include "$this->root\php\Services\Query\GetQuery.php";
+    include_once "$this->root\php\Services\DB.php"; 
+    include_once "$this->root\php\Services\Query\GetQuery.php";
+    include_once "$this->root\php/Services/Query/Query.php";
     
     $this->db_instant = new db_Connection();
 
@@ -53,7 +54,19 @@ class PageBody {
     <script src='$this->root/bootstrap/js/bootstrap.js'></script>
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/material-ui/5.0.0-beta.5/index.js' integrity='sha512-uKxirna7d5STmVXEMQYBVRW1nERrqHjwOubv4QcK4oYaaifLiEnN/aLIJxVsyK4R1K+awpNIG73RaQfT1DZ8ew==' crossorigin='anonymous' referrerpolicy='no-referrer'></script>
-  </body>
+  
+    <script>
+      function togo(url){
+        window.location.href = 'Pages/productDetail.php?product='+url;
+      }
+
+      function abc(){
+        alert('hello');
+      }
+
+      
+    </script>
+    </body>
 
   </html>";
   }
@@ -76,18 +89,16 @@ class PageBody {
   }
 
   function product(){    
-    $query = "SELECT `product`.`PID`,`product`.`Title`,`product_images`.`imageName` FROM `product` INNER JOIN `product_images` ON `product`.PID = `product_images`.PID LIMIT 0,4";
-    $result = $this->db_instant->conn->query($query);
+    $query = $this->db_instant->querys->Getquery->getQuery_Product." LIMIT 0,4";
+    $result = $this->db_instant->getData($query);
     
 
     $this->template = $this->template.ProductSection($this->root,$result);
   }
 
   function categories() {    
-    $query = "SELECT `categories`.`CID`, `categories`.`Title`, `product_images`.`imageName` FROM `categories` INNER JOIN `product` ON `product`.CID = `categories`.CID INNER JOIN `product_images` ON `product`.PID = `product_images`.PID LIMIT 0,3";
-    $result = $this->db_instant->conn->query($query);
-    
-    
+    $query = $this->db_instant->querys->Getquery->getQuery_categories." LIMIT 0,3";
+    $result = $this->db_instant->getData($query);
     $this->template = $this->template.CategoriesSection($this->root,$result);
   }
 
@@ -123,8 +134,10 @@ class PageBody {
     $this->template = $this->template.getTMC();
   }
 
-  function detailsSection(){
-    $this->template = $this->template.getDetails($this->root);
+  function detailsSection($productID){
+    $query = $this->db_instant->querys->Getquery->getQuery_Single_Product." where PID = '".$productID."'";
+    $result = $this->db_instant->getData($query);
+    $this->template = $this->template.getDetails($this->root, $result);
   }
 
   function cartSection(){
