@@ -7,7 +7,7 @@ function getProduct($root,$result) {
     
     if ($result->num_rows > 0) {
       while($row = $result -> fetch_row()) {
-        $Product = $Product."<div class='col-md-3 col-sm-6 col-xs-6' id='".$row[0]."'>
+        $Product = $Product."<div class='col-md-3 col-sm-6 col-xs-6' id='".$row[0]."' onclick='togo(`".$row[0]."`)'>
             <img src='$root/images/Product/".$row[2]."' alt='product pic 1'>
             <p>".$row[1]."</p>
         </div>";
