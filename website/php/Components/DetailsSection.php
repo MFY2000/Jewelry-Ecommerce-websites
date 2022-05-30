@@ -1,7 +1,24 @@
 <?php
-  
-  function getDetails($root)
+  function rating($rating){
+    $Toreturn = "";
+    $i=0;
+    for ($i;$i < $rating; $i++) { 
+        $Toreturn = $Toreturn."<li><i class='fa fa-star'></i></li>";
+    }   
+    
+    if($rating - $i > 0){
+      $Toreturn = $Toreturn."<li><i class='fa fa-star-half-o'></i></li>";
+    }
+
+    return $Toreturn;
+
+  }
+
+
+  function getDetails($root, $reslt)
   {
+    $data = $reslt->fetch_assoc();
+    print_r($data);
     return "<!-- product start -->
     <section class='productDetialsPage'>
         <div class='container'>
@@ -9,34 +26,19 @@
                 <div class='col-md-6'>
                     <div>
                         <div class='slider slider-for'>
-                            <img src='$root/images/Product/productPic1.png' alt='product pic 1'>
-                            <img src='$root/images/Product/productPic2.png' alt='product pic 1'>
-                            <img src='$root/images/Product/productPic3.png' alt='product pic 1'>
-                            <img src='$root/images/Product/productPic4.png' alt='product pic 1' />
+                            <img src='$root/images/Product/".$data['imageName']."' alt='product pic 1'> 
                         </div>
-                        <div class='productMoreImages slider slider-nav'>
-                            <img src='$root/images/Product/productPic1.png' alt='product pic 1' />
-                            <img src='$root/images/Product/productPic2.png' alt='product pic 1' />
-                            <img src='$root/images/Product/productPic3.png' alt='product pic 1' />
-                            <img src='$root/images/Product/productPic4.png' alt='product pic 1' />
-                        </div>
+                        
                     </div>
                 </div>
                 <div class='col-md-6'>
                     <div class='productdeitalsInfo'>
-                        <h3 class='primaryHeading'>Round Neckless</h3>
+                        <h3 class='primaryHeading'>".$data['Title']."</h3>
                         <div class='rating'>
-                            <ul>
-                                <li><i class='fa fa-star'></i></li>
-                                <li><i class='fa fa-star'></i></li>
-                                <li><i class='fa fa-star'></i></li>
-                                <li><i class='fa fa-star'></i></li>
-                                <li><i class='fa fa-star'></i></li>
-                                <li><i class='fa fa-star'></i></li>
-                            </ul>
+                            <ul>".rating($data['Rating'])."</ul>
                         </div>
-                        <h1 class='secondaryHeading'>300 Rs</h1>
-                        <p class='primaryParagraph'>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
+                        <h1 class='secondaryHeading'>$ ".$data['Price']."</h1>
+                        <p class='primaryParagraph'>".$data['Details']."</p>
                         <div class='quantity'>
                             <div class='row'>
                                 <p>Quantity</p>
@@ -69,10 +71,7 @@
                 <div class='row'>
                     <div class='col-md-12'>
                         <div class='bottomparagraph'>
-                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore harum quaerat dolorem cum et, quis delectus quia, necessitatibus asperiores reiciendis, aliquid aperiam rem vero hic labore explicabo iusto illum doloribus amet?
-                                Eius, harum itaque. Molestiae repellat non error exercitationem cum optio suscipit, saepe laboriosam recusandae reprehenderit labore aspernatur dignissimos repudiandae amet quia doloribus ratione eos eligendi iure itaque
-                                facere, quasi nulla! Voluptate assumenda officiis quae ut! Atque similique debitis modi! Illo repellendus mollitia eligendi, assumenda iure reprehenderit qui ad aliquam molestias voluptate esse accusantium quos corporis
-                                ratione exercitationem. Eaque cupiditate, molestias debitis fuga tempora assumenda dolores? Quia perferendis adipisci odit.</p>
+                            <p>".$data['Details']."</p>
                         </div>
                     </div>
                 </div>
