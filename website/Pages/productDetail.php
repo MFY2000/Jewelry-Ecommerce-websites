@@ -5,7 +5,7 @@
     $index = new PageBody("product-detials", "..");
     $index->navBar();
     $index->banner();
-    $index->detailsSection();
+    $index->detailsSection($_GET["product"]);
     $index->footer();
     
     echo $index->body();
