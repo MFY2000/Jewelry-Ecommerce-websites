@@ -1,0 +1,524 @@
+                        <div class="tab-pane" id="Localization">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Basic Settings</h3>
+                                    <div class="card-options">
+                                        <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
+                                        <a href="#" class="card-options-fullscreen" data-toggle="card-fullscreen"><i class="fe fe-maximize"></i></a>
+                                        <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <form>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label>Default Country</label>
+                                                    <select class="form-control">
+                                                        <option selected="selected">USA</option>
+                                                        <option>United Kingdom</option>
+                                                        <option>India</option>
+                                                        <option>French</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label>Date Format</label>
+                                                    <select class="form-control">
+                                                        <option value="d/m/Y">15/05/2016</option>
+                                                        <option value="d.m.Y">15.05.2016</option>
+                                                        <option value="d-m-Y">15-05-2016</option>
+                                                        <option value="m/d/Y">05/15/2016</option>
+                                                        <option value="Y/m/d">2016/05/15</option>
+                                                        <option value="Y-m-d">2016-05-15</option>
+                                                        <option value="M d Y">May 15 2016</option>
+                                                        <option selected="selected" value="d M Y">15 May 2016</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label>Timezone</label>
+                                                    <select class="form-control">
+                                                        <option>10:45am Chicago (GMT-6)</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label>Default Language</label>
+                                                    <select class="form-control">
+                                                        <option selected="selected">English</option>
+                                                        <option>Russian</option>
+                                                        <option>Arabic</option>
+                                                        <option>French</option>
+                                                        <option>Hindi</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label>Currency Code</label>
+                                                    <select class="form-control">
+                                                        <option selected="selected">USD</option>
+                                                        <option>Pound</option>
+                                                        <option>EURO</option>
+                                                        <option>Ringgit</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label>Currency Symbol</label>
+                                                    <input class="form-control" value="$" type="text">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 text-right m-t-20">
+                                                <button type="button" class="btn btn-primary">Save</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>                    
+                        </div>
+                        <div class="tab-pane" id="Roles_Permissions">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Roles & Permissions</h3>
+                                    <div class="card-options">
+                                        <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
+                                        <a href="#" class="card-options-fullscreen" data-toggle="card-fullscreen"><i class="fe fe-maximize"></i></a>
+                                        <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-group mb-3 tp-setting">
+                                        <li class="list-group-item">
+                                            Anyone seeing my profile page
+                                            <div class="float-right">
+                                                <label class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" />
+                                                    <span class="custom-control-label">&nbsp;</span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            Anyone send me a message
+                                            <div class="float-right">
+                                                <label class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" />
+                                                    <span class="custom-control-label">&nbsp;</span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            Anyone posts a comment on my post
+                                            <div class="float-right">
+                                                <label class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" />
+                                                    <span class="custom-control-label">&nbsp;</span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            Anyone invite me to group
+                                            <div class="float-right">
+                                                <label class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" checked='' />
+                                                    <span class="custom-control-label">&nbsp;</span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="table-responsive">
+                                        <table class="table table-striped mb-0">
+                                            <thead>
+                                                <tr>
+                                                    <th>Module Permission</th>
+                                                    <th>Read</th>
+                                                    <th>Write</th>
+                                                    <th>Create</th>
+                                                    <th>Delete</th>
+                                                    <th>Import</th>
+                                                    <th>Export</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Employee</td>
+                                                    <td>
+                                                        <label class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" />
+                                                            <span class="custom-control-label">&nbsp;</span>
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" />
+                                                            <span class="custom-control-label">&nbsp;</span>
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" checked=""/>
+                                                            <span class="custom-control-label">&nbsp;</span>
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" checked=""/>
+                                                            <span class="custom-control-label">&nbsp;</span>
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" checked=""/>
+                                                            <span class="custom-control-label">&nbsp;</span>
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" />
+                                                            <span class="custom-control-label">&nbsp;</span>
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Holidays</td>
+                                                    <td>
+                                                        <label class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" checked=""/>
+                                                            <span class="custom-control-label">&nbsp;</span>
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" />
+                                                            <span class="custom-control-label">&nbsp;</span>
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" checked=""/>
+                                                            <span class="custom-control-label">&nbsp;</span>
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" />
+                                                            <span class="custom-control-label">&nbsp;</span>
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" />
+                                                            <span class="custom-control-label">&nbsp;</span>
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" checked=""/>
+                                                            <span class="custom-control-label">&nbsp;</span>
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Leave Request</td>
+                                                    <td>
+                                                        <label class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" checked=""/>
+                                                            <span class="custom-control-label">&nbsp;</span>
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" checked=""/>
+                                                            <span class="custom-control-label">&nbsp;</span>
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" checked="" />
+                                                            <span class="custom-control-label">&nbsp;</span>
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" />
+                                                            <span class="custom-control-label">&nbsp;</span>
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" />
+                                                            <span class="custom-control-label">&nbsp;</span>
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" />
+                                                            <span class="custom-control-label">&nbsp;</span>
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Events</td>
+                                                    <td>
+                                                        <label class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" />
+                                                            <span class="custom-control-label">&nbsp;</span>
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" />
+                                                            <span class="custom-control-label">&nbsp;</span>
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" checked=""/>
+                                                            <span class="custom-control-label">&nbsp;</span>
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" />
+                                                            <span class="custom-control-label">&nbsp;</span>
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" checked="" />
+                                                            <span class="custom-control-label">&nbsp;</span>
+                                                        </label>
+                                                    </td>
+                                                    <td>
+                                                        <label class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" />
+                                                            <span class="custom-control-label">&nbsp;</span>
+                                                        </label>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>                    
+                        </div>
+                        <div class="tab-pane" id="Email_Settings">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">SMTP Email Settings</h3>
+                                    <div class="card-options">
+                                        <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
+                                        <a href="#" class="card-options-fullscreen" data-toggle="card-fullscreen"><i class="fe fe-maximize"></i></a>
+                                        <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <form>
+                                        <div class="form-group">
+                                            <label class="fancy-radio custom-color-green"><input name="gender3" value="PHP Mail" type="radio" checked><span><i></i>PHP Mail</span></label>
+                                            <label class="fancy-radio custom-color-green"><input name="gender3" value="SMTP" type="radio"><span><i></i>SMTP</span></label>
+                                        </div>							
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label>Email From Address</label>
+                                                    <input class="form-control" type="email">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label>Emails From Name</label>
+                                                    <input class="form-control" type="text">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label>SMTP HOST</label>
+                                                    <input class="form-control" type="text">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label>SMTP USER</label>
+                                                    <input class="form-control" type="text">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label>SMTP PASSWORD</label>
+                                                    <input class="form-control" type="password">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label>SMTP PORT</label>
+                                                    <input class="form-control" type="text">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label>SMTP Security</label>
+                                                    <select class="form-control">
+                                                        <option>None</option>
+                                                        <option>SSL</option>
+                                                        <option>TLS</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <label>SMTP Authentication Domain</label>
+                                                    <input class="form-control" type="text">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12 m-t-20 text-right">
+                                                <button type="button" class="btn btn-primary">SAVE</button>
+                                            </div>
+                                        </div>                            
+                                    </form>
+                                </div>
+                            </div>                    
+                        </div>
+                        <div class="tab-pane" id="Invoice_Settings">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Invoice Settings</h3>
+                                    <div class="card-options">
+                                        <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
+                                        <a href="#" class="card-options-fullscreen" data-toggle="card-fullscreen"><i class="fe fe-maximize"></i></a>
+                                        <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <form>
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Invoice prefix</label>
+                                                    <input class="form-control" type="email">
+                                                </div>                           
+                                                <input type="file" class="dropify">
+                                                <small class="text-danger">Recommended image size is 200px x 40px</small>
+                                            </div>
+                                            <div class="col-sm-12 m-t-20 text-right">
+                                                <button type="button" class="btn btn-primary">SAVE</button>
+                                            </div>
+                                        </div>
+                                    </form> 
+                                </div>
+                            </div>                                       
+                        </div>
+                        <div class="tab-pane" id="Notifications">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Notifications Settings</h3>
+                                    <div class="card-options">
+                                        <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
+                                        <a href="#" class="card-options-fullscreen" data-toggle="card-fullscreen"><i class="fe fe-maximize"></i></a>
+                                        <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <ul class="list-group">
+                                        <li class="list-group-item">
+                                            Anyone send me a message
+                                            <div class="float-right">
+                                                <label class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" />
+                                                    <span class="custom-control-label">&nbsp;</span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            Anyone seeing my profile page
+                                            <div class="float-right">
+                                                <label class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" checked="" />
+                                                    <span class="custom-control-label">&nbsp;</span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            Anyone posts a comment on my post
+                                            <div class="float-right">
+                                                <label class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" checked=""/>
+                                                    <span class="custom-control-label">&nbsp;</span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            Anyone send me a message
+                                            <div class="float-right">
+                                                <label class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" />
+                                                    <span class="custom-control-label">&nbsp;</span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item">
+                                            Anyone seeing my profile page
+                                            <div class="float-right">
+                                                <label class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" />
+                                                    <span class="custom-control-label">&nbsp;</span>
+                                                </label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="Change_Password">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="card-title">Change Password</h3>
+                                    <div class="card-options">
+                                        <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
+                                        <a href="#" class="card-options-fullscreen" data-toggle="card-fullscreen"><i class="fe fe-maximize"></i></a>
+                                        <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row clearfix">
+                                        <div class="col-lg-4 col-md-12">
+                                            <div class="form-group">                                                
+                                                <input type="text" class="form-control" value="louispierce" disabled="" placeholder="Username">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-12">
+                                            <div class="form-group">
+                                                <input type="email" class="form-control" value="louis.info@yourdomain.com" placeholder="Email">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-12">
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" placeholder="Phone Number">
+                                            </div>
+                                        </div>                                
+                                        <div class="col-lg-12 col-md-12">
+                                            <hr>
+                                            <h6>Change Password</h6>
+                                            <div class="form-group">
+                                                <input type="password" class="form-control" placeholder="Current Password">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="password" class="form-control" placeholder="New Password">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="password" class="form-control" placeholder="Confirm New Password">
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 m-t-20 text-right">
+                                            <button type="button" class="btn btn-primary">SAVE</button> &nbsp;
+                                            <button type="button" class="btn btn-default">CANCEL</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
