@@ -29,27 +29,30 @@
                     </ul>
                 </div>
                 <ul class='nav navbar-nav navbar-right'>
-                    <li>
+                <li>
+                    ".(isset($_SESSION['Login']['id']) ? 
+                    "
+                        <a href='$root/Pages/cart.php'>
+                        <img src='$root/assets/images/Icons/cartLogo.png' alt='' />
+                        <sup>".(isset($_SESSION['cart']) ? count($_SESSION['cart']) : '0')."<sup>
+                        </a>
+                    ":""
+                    )."
+                    </li>
+                        
+                <li>
                     
                 ".(!isset($_SESSION['Login']['id']) ? 
                     "<a href='$root/Pages/login.php?page=signIN'>
                         <img src='$root/assets/images/Icons/userlogo.png' alt='' />
                     </a>":
-                    "<a href='$root/php/Services/Function/logout.php' >
-                        <img src='$root/assets/images/Icons/logout.png' alt='' style='width: 20px;' />
+                    "<a href='$root/assets/php/Services/Form/loginOut.php' >
+                        <img src='$root/assets/images/Icons/logout.png' alt='logout' style='width: 20px;' />
                     </a>"
                 )."
                         
                     </li>
-                    <li>
-                    ".(isset($_SESSION['Login']['id']) ? 
-                    "
-                        <a href='$root/Pages/cart.php'>
-                            <img src='$root/assets/images/Icons/cartLogo.png' alt='' />
-                        </a>
-                    ":""
-                    )."
-                    </li>
+                    
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
