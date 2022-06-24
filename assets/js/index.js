@@ -1,28 +1,39 @@
-/*Quantity incrementer */
-var counter = 0;
-
-function incrementer() {
-    counter++;
-    document.getElementById("quantityInc").innerHTML = counter;
-}
-
-function decrementer() {
-    counter > 0 ? counter-- : counter;
-    document.getElementById("quantityInc").innerHTML = counter;
-}
-
-/*product deitals img slider */
-$(".slider-for").slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: true,
-    fade: true,
-    asNavFor: ".slider-nav",
-});
-$(".slider-nav").slick({
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    asNavFor: ".slider-for",
-    dots: true,
-    focusOnSelect: true,
-});
+function togo(url){ window.location.href = '$this->root/Pages/productDetail.php?product='+url; } 
+        
+        function counter(id,value,condition,limit){ 
+          var element = document.getElementById(id); 
+          var actionDone = false;
+    
+          if(condition && element.innerHTML > limit){ 
+            element.innerHTML = -(-element.innerHTML - value);
+            actionDone = true;
+          } 
+          else if(element.innerHTML < limit){ 
+            element.innerHTML = -(-element.innerHTML - value);
+            actionDone = true;
+          } 
+    
+          addToCart(id, element.innerHTML);
+          return actionDone;
+        } 
+    
+        function addToCart(id, quantity){
+          localStorage.setItem(id, quantity);
+        }
+    
+    
+        function counterChnage(id,condition,limit){ 
+          var change = (condition ? -1 : 1);
+          var price = parseInt(document.getElementById('Price_'+id).innerHTML);
+          var ProductTotal = document.getElementById('productTotal_'+id);
+          var CartTotal = document.getElementById('CartTotal');
+    
+          actionDone = counter(('Cart_'+id), change,condition,limit);
+      
+          if(actionDone){
+              ProductTotal.innerHTML = parseInt(ProductTotal.innerHTML)+(price * change);
+              CartTotal.innerHTML = parseInt(CartTotal.innerHTML)+(price * change);
+          }
+        }
+      
+        
