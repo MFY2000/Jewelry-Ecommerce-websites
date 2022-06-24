@@ -26,30 +26,30 @@ class db_Connection{
     return !$result ? null : $result;
   }
 
-  function isUser(){
+  function isUser($email, $password){
     $isUser = false;
 
     $query = $this->querys->Getquery->getQuery;
-    $query = $query.("`Email` = '".$email."', `Password` ='".$password."' ");
+    $query = $query.("`Email` = '".$email."' AND `Password` ='".$password."' ");
 
-    $result = getData($query);
-
+    $result = $this->getData($query);
+    
     if($result->num_rows > 0){
-      
-      while($row = $result -> fetch_row()) {
-        $_SESSION["Login"]["id"] = $row["uid"];
-      }
-      
       $isUser = true;
       $message = "Successfully Login with email amd passwords";
       $error = false;
+
+      while($row = $result -> fetch_row()) {
+        $_SESSION["Login"]["id"] = $row[0];
+      }
+      
     }else{
-      $message = "Error".$conn->error;
+      $message = "User email amd passwords is incorrect ".$this->conn->error;
       $error = true;
     }
 
-    $_SESSION["Error"]["type"]    = $error;
-    $_SESSION["Error"]["Message"] = $message;
+    $_SESSION['Message']["error"]    = $error;
+    $_SESSION['Message']["message"] = $message;
     return $isUser;
 
   }
