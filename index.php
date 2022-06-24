@@ -9,12 +9,7 @@
     $index->categories();
     $index->newsLetter();
     $index->footer();
-
-    if(isset($_SESSION["Login"]["message"])){
-        $type = $_SESSION["Login"]["error"]  ? "succes" : "error";
-        $index->alertSection($_SESSION["Login"]["message"], $type);
-    }
+    
     
     echo $index->body();
-    unset($_SESSION['Login']["message"]);
 ?>
