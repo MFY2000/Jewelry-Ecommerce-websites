@@ -4,6 +4,7 @@
     $index->navBar();
     $index->banner();
     $index->checkOutSection();
+    $index->checkOutTotalSection();
     $index->footer();
     
     echo $index->body();
