@@ -10,10 +10,9 @@
   }
 
 
-  function getDetails($root, $reslt)
-  {
+  function getDetails($root, $reslt){
+    print_r($_SESSION);
     $data = $reslt->fetch_assoc();
-    print_r($data);
     return "<!-- product start -->
     <section class='productDetialsPage'>
         <div class='container'>
@@ -37,16 +36,16 @@
                         <div class='quantity'>
                             <div class='row'>
                                 <p>Quantity</p>
-                                <a onclick='decrementer()'>-</a>
-                                <p id='quantityInc' class='incrementer'>0</p>
-                                <a onclick='incrementer()'>+</a>
+                                <a onclick='counter(`quantityInc_".$data['PID']."`,-1,true, 1)'>-</a>
+                                <p id='quantityInc_".$data['PID']."' class='incrementer'>1</p>
+                                <a onclick='counter(`quantityInc_".$data['PID']."`,1,false,".$data['Quantity'].")'>+</a>
                             </div>
                         </div>
                         <div class='deliveryOptions'>
                             <p class='primaryParagraph'><i class='fa fa-truck-moving'></i>&nbsp;&nbsp;Lorem ipsum dolor, sit amet consectetur</p>
                             <p class='primaryParagraph'><i class='fa fa-tags'></i>&nbsp;&nbsp;Lorem ipsum dolor, sit amet consectetur</p>
                         </div>
-                        <a href='cart.php' class='btnStyle'>Shop Now</a>
+                        ".(isset($_SESSION['Login']['id']) ? "<a onclick='addtoCartItem(".$data['PID'].")' class='btnStyle'>Add to Carts</a>":"<a href='$root/Pages/login.php?page=signIN' class='btnStyle'>Login for (Add to cart)</a>")."
                     </div>
                 </div>
             </div>
@@ -74,6 +73,22 @@
         </div>
     </section>
     <!-- product end -->
+
+
+    <script>
+    setTimeout( getCart(`quantityInc_".$data['PID']."`),2000);
+    
+    function getCart(id){
+        var value = localStorage.getItem(id);
+        document.getElementById(id).innerHTML = value != null ? value : 1;
+    }
+
+    function addtoCartItem(id){
+        var value = localStorage.getItem('quantityInc_'+id);
+        window.location.href = `$root/assets/php/Services/Form/AddToCart.php?ID=`+id+`&quanatity=`+(value != null ? value : 1);
+    }
+
+    </script>
 ";
   }
 
