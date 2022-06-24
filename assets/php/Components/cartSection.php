@@ -1,101 +1,102 @@
 <?php
-  function getCart(){
-    return " <section class='cartPage'>
+    $GLOBALS["totalPrice"] = 0;
+    $GLOBALS["id"] = array();
+
+
+    function getCartRow($root,$db_instant){
+        $carts = "";
+        
+        foreach ($_SESSION['cart'] as $key => $value) {  
+            $query = $db_instant->querys->Getquery->Details_Cart. $key;
+            $result = $db_instant->getData($query);
+
+            $data = $result->fetch_assoc();
+
+            $GLOBALS["totalPrice"] = $data['Price'] * $value + $GLOBALS["totalPrice"];
+            array_push($GLOBALS["id"], $data['PID']);
+
+            $carts = $carts."<tr id='r".$data['PID']."' class='cartRow'>
+            <td>
+                <div class='price'>
+                    <img src='$root/assets/images/Product/".$data['imageName']."' alt='".$data['Title']."' onload='getCartQuantity(".$data['PID'].",".$value.")'/>
+                    <p>".$data['Title']."</p>
+                </div>
+            </td>
+            <td class='tdp'>
+                <p>$ <span id='Price_".$data['PID']."'>".$data['Price']."</span></p>
+            </td>
+            <td >
+                <div class='cartQuantity'>
+                    <a onclick='counterChnage(".$data['PID'].",true, 1)'>-</a>
+                    <p id='Cart_".$data['PID']."'>$value</p>
+                    <a onclick='counterChnage(".$data['PID'].",false,".$data['Quantity'].")'>+</a>
+                </div>
+            </td>
+            <td class='tdp'>
+                <p>$ <span id='productTotal_".$data['PID']."'>".$data['Price']*$value."</span></p>
+            </td>
+            <td class='tdp'>
+                <a href='$root/assets/php/Services/Form/deleteCart.php?ID=".$data['PID']."'><i class='fa fa-trash'></i></a>
+            </td>
+        </tr>";
+     
+        }
+    
+    return $carts;
+
+    }
+
+  function getCart($root,$db_instant){
+    return "
+    <script>
+    function getCartQuantity(id, quantity){
+        var oldQuantity = localStorage.getItem('Cart_'+id);
+        
+        if(quantity != oldQuantity){
+            var difference = (oldQuantity-quantity);
+            
+            if(difference > 0){
+                document.getElementById('Cart_'+id).innerHTML = oldQuantity;
+            }
+
+            var price = parseInt(document.getElementById('Price_'+id).innerHTML);
+            
+            setTimeout(() => {
+                var CartTotal = document.getElementById('CartTotal');
+                var ProductTotal = document.getElementById('productTotal_'+id);
+                ProductTotal.innerHTML = parseInt(ProductTotal.innerHTML)+(price * difference);
+                CartTotal.innerHTML = parseInt(CartTotal.innerHTML)+(price * difference);
+            }, 1000); 
+        }
+    }
+    
+    </script>
+    <section class='cartPage'>
     <div class='container'>
         <div class='row'>
             <div class='cartmain col-md-12'>
                 <table>
-                    <tr>
                         <th>Product</th>
                         <th>Price</th>
                         <th>Quantity</th>
                         <th>Total</th>
                     </tr>
-                    <tr id='r1' class='cartRow'>
-                        <td>
-                            <div class='price'>
-                                <img src='./images/productPic1.png' alt='product pic 1' />
-                                <p>Lorem ipsum dolor sit amet,</p>
-                            </div>
-                        </td>
-                        <td class='tdp'>
-                            <p>300 Rs</p>
-                        </td>
-                        <td>
-                            <div class='cartQuantity'>
-                                <a onclick='decrementer()'>-</a>
-                                <p id='quantityInc'>0</p>
-                                <a onclick='incrementer()'>+</a>
-                            </div>
-                        </td>
-                        <td class='tdp'>
-                            <p>310 Rs</p>
-                        </td>
-                        <td class='tdp'>
-                            <a href=''><i class='fa fa-trash'></i></a>
-                        </td>
-                    </tr>
-                    <tr class='cartRow'>
-                        <td>
-                            <div class='price'>
-                                <img src='./images/productPic3.png' alt='product pic 1' />
-                                <p>Lorem ipsum dolor sit amet,</p>
-                            </div>
-                        </td>
-                        <td class='tdp'>
-                            <p>300 Rs</p>
-                        </td>
-                        <td>
-                            <div class='cartQuantity'>
-                                <a onclick='decrementer()'>-</a>
-                                <p id='quantityInc'>5</p>
-                                <a onclick='incrementer()'>+</a>
-                            </div>
-                        </td>
-                        <td class='tdp'>
-                            <p>310 Rs</p>
-                        </td>
-                        <td class='tdp'>
-                            <a href=''><i class='fa fa-trash'></i></a>
-                        </td>
-                    </tr>
-                    <tr class='cartRow'>
-                        <td>
-                            <div class='price'>
-                                <img src='./images/productPic4.png' alt='product pic 1' />
-                                <p>Lorem ipsum dolor sit amet,</p>
-                            </div>
-                        </td>
-                        <td class='tdp'>
-                            <p>300 Rs</p>
-                        </td>
-                        <td>
-                            <div class='cartQuantity'>
-                                <a onclick='decrementer()'>-</a>
-                                <p id='quantityInc'>5</p>
-                                <a onclick='incrementer()'>+</a>
-                            </div>
-                        </td>
-                        <td class='tdp'>
-                            <p>310 Rs</p>
-                        </td>
-                        <td class='tdp'>
-                            <a href=''><i class='fa fa-trash'></i></a>
-                        </td>
-                    </tr>
+                    ".getCartRow($root, $db_instant)."
                 </table>
             </div>
         </div>
         <div class='cartfooter row'>
             <div class='col-md-12'>
-                <a href='checkout.html' class='btnStyle'>Check Out</a>
+                <a onclick='moveTOCheckout(".json_encode($GLOBALS["id"]).")'  class='btnStyle'>Check Out</a>
                 <div>
-                    <p>Total : 930 Rs</p>
+                    <p>Total : $ <span  id='CartTotal'>".$GLOBALS['totalPrice']."</span></p>
                 </div>
             </div>
         </div>
     </div>
     </section>
+   
+    
     ";
   }
 ?>
