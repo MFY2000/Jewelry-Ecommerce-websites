@@ -10,11 +10,11 @@
                     <form method='post' action='..\php\Services\Form/signupForm.php'>
                         <h1>Signup</h1>
                         
-                        <input class='contactInput' type='email' name='Email' placeholder='Email Address'><br>
-                        <input class='contactInput' type='text' name='Password' placeholder='Password'><br>
-                        <input class='contactInput' type='text' name='RePassword' placeholder='Re type Password'><br>
-                        <input class='contactInput' type='text' name='Firstname' placeholder='Firstname'><br>
-                        <input class='contactInput' type='text' name='Lastname' placeholder='Lastname'><br>
+                        <input class='contactInput' type='email' name='Email' placeholder='Email Address' required  > <br>
+                        <input class='contactInput' type='password' name='Password' placeholder='Password' required  > <br>
+                        <input class='contactInput' type='password' name='RePassword' placeholder='Re type Password' required  > <br>
+                        <input class='contactInput' type='text' name='Firstname' placeholder='Firstname' required  > <br>
+                        <input class='contactInput' type='text' name='Lastname' placeholder='Lastname' required  > <br>
                         
                         <div class='cbi'>
                             <input type='checkbox' name='registering'>&nbsp;
