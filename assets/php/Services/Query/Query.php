@@ -23,6 +23,7 @@
     public $getQuery_Single_Product = "SELECT * FROM `categories` INNER JOIN `product` ON `product`.CID = `categories`.CID INNER JOIN `product_images` ON `product`.PID = `product_images`.PID";
     public $getQuery_aboutUs = "SELECT * FROM `aboutus` LIMIT 1";
 
+    public $Details_Cart = "SELECT * FROM `product` INNER JOIN `product_images` ON `product`.PID = `product_images`.PID where `product`.PID = ";
   }  
 
   class InsertQuery{
