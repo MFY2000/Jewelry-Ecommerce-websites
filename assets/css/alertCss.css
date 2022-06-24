@@ -1,0 +1,73 @@
+.wtg-alert {
+  border-left: 4px solid;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding: 20px;
+  -webkit-box-shadow: 0 5px 8px -6px rgba(0,0,0,.2);
+  -moz-box-shadow: 0 5px 8px -6px rgba(0,0,0,.2);
+  box-shadow: 0 5px 8px -6px rgba(0,0,0,.2);
+}
+
+.wtg-alert-title {
+  font-weight: 700;
+  padding-bottom: 15px;
+}
+
+.wtg-alert-danger {
+  background-color: #FDF7F7;
+  border-left-color: #B74B4B;
+  color: #B74B4B;
+}
+
+.wtg-alert-default {
+  background-color: #F9F9F9;
+  border-left-color: #888;
+  color: #888;
+}
+
+.wtg-alert-info {
+  background: #F5FBFD;
+  border-left-color: #8ABCE4;
+  color: #19A0D7;
+}
+
+.wtg-alert-primary {
+  background: #EFF6FD;
+  border-left-color: #337AB7;
+  color: #337AB7;
+}
+
+.wtg-alert-success {
+  background-color: #EBF7E7;
+  border-left-color: #3E753F;
+  color: #3E753F;
+}
+
+.wtg-alert-warning {
+  background-color: #FCF8F2;
+  border-left-color: #EEAC57;
+  color: #CD7A37;
+}
+
+.wtg-alert > div.wtg-alert-title {
+  text-transform: uppercase;
+}
+
+.wtg-alert > div.wtg-alert-title > strong {
+  font-size: 14px;
+}
+
+.wtg-alert > p.wtg-alert-text {
+  font-size: 14px;
+}
+
+.wtg-alert > p.wtg-alert-text {
+  font-size: 14px;
+}
+
+.alertBox {
+  width: 35%;
+  position: absolute;
+  right: 0px;
+  bottom: 0%;
+}
