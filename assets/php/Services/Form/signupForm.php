@@ -27,7 +27,7 @@
   session_start();
 
 
-  $_SESSION["Login"]["message"] = $message;
-  $_SESSION["Login"]["error"] = $message;
+  $_SESSION['Message']["message"] = $message;
+  $_SESSION['Message']["error"] = $message;
   header("Location: ..\..\..\Pages\index.php");
 ?>
