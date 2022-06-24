@@ -10,15 +10,19 @@
     else{
         $index->signupSection();
     }
-    
-    if(isset($_SESSION["Login"]["message"])){
-        $type = $_SESSION["Login"]["error"]  ? "succes" : "error";
-        $index->alertSection($_SESSION["Login"]["message"], $type);
-    }
-
     $index->footer();
     
     echo $index->body();
     
-    unset($_SESSION['Login']["message"]);
+    if(isset($_POST["email"]) && isset($_POST["password"])){
+        if($index->db_instant->isUser($_POST["email"], $_POST["password"])){
+            echo "<script> window.location.href = '../index.php'; </script>";
+        }else{
+            $index->alertSection($_SESSION['Message']["message"], "Error"); 
+        }
+        
+    }
+    
+
+
     ?>
