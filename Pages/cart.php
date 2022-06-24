@@ -5,7 +5,7 @@
     
     $index = new PageBody("products-cart", "..");
     $index->navBar();
-    $index->banner();
+    $index->banner(); 
     $index->cartSection();
     $index->footer();
     
