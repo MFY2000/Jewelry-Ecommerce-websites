@@ -57,19 +57,23 @@
             
             if(difference > 0){
                 document.getElementById('Cart_'+id).innerHTML = oldQuantity;
+                var price = parseInt(document.getElementById('Price_'+id).innerHTML);
+                
+                setTimeout(() => {
+                    var CartTotal = document.getElementById('CartTotal');
+                    var ProductTotal = document.getElementById('productTotal_'+id);
+                    ProductTotal.innerHTML = parseInt(ProductTotal.innerHTML)+(price * difference);
+                    CartTotal.innerHTML = parseInt(CartTotal.innerHTML)+(price * difference);
+                }, 1000); 
             }
 
-            var price = parseInt(document.getElementById('Price_'+id).innerHTML);
-            
-            setTimeout(() => {
-                var CartTotal = document.getElementById('CartTotal');
-                var ProductTotal = document.getElementById('productTotal_'+id);
-                ProductTotal.innerHTML = parseInt(ProductTotal.innerHTML)+(price * difference);
-                CartTotal.innerHTML = parseInt(CartTotal.innerHTML)+(price * difference);
-            }, 1000); 
         }
     }
-    
+
+    function moveTOCheckout(){ 
+        var total = document.getElementById('CartTotal').innerHTML;
+        window.location.href = `".$root."/assets/php/Services/Form/CheckoutFunction.php?isadd=true&total=`+total;  
+    }
     </script>
     <section class='cartPage'>
     <div class='container'>
