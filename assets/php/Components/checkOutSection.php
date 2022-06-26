@@ -27,8 +27,8 @@
                         <a onclick='counterChnage(".$data['PID'].",false,".$data['Quantity'].")'>+</a>
                     </div>
                     <div class='money'>
-                        <p>$ <span id='Price_".$data['PID']."'>".$data['Price']."</span></p>
-                        <p>$ <span id='productTotal_".$data['PID']."'>".$data['Price']*$value."</span></p>
+                        <p>$ <b id='Price_".$data['PID']."'>".$data['Price']."</b></p>
+                        <p>$ <b id='productTotal_".$data['PID']."'>".$data['Price']*$value."</b></p>
                     </div>
                     <div class='dfco'>
                         <a ><i class='fa fa-trash'></i></a>
@@ -53,17 +53,17 @@
             
             if(difference > 0){
                 document.getElementById('Cart_'+id).innerHTML = oldQuantity;
+                setTimeout(() => {
+                    var price = parseInt(document.getElementById('Price_'+id).innerHTML);
+                    var CartTotal = document.getElementById('CartTotal');
+                    var ProductTotal = document.getElementById('productTotal_'+id);
+                    console.log(ProductTotal.innerHTML);
+                    ProductTotal.innerHTML = parseInt(ProductTotal.innerHTML)+(price * difference);
+                    document.getElementById('Subtotal').innerHTML = parseInt(ProductTotal.innerHTML)+(price * difference);
+                }, 1000); 
             }
-
-            
-            setTimeout(() => {
-                var price = parseInt(document.getElementById('Price_'+id).innerHTML);
-                var CartTotal = document.getElementById('CartTotal');
-                var ProductTotal = document.getElementById('productTotal_'+id);
-                ProductTotal.innerHTML = parseInt(ProductTotal.innerHTML)+(price * difference);
-                CheckoutTotal();
-            }, 1000); 
         }
+        setTimeout(() => {CheckoutTotal();}, 1000); 
     }
     
         function onclickableHref(id,price){
@@ -71,6 +71,18 @@
             window.location.href = '$root/assets/php/Services/Form/CheckoutFunction.php?isadd=false&id='+id+'&p1='+price+'&p2='+quantity;
         }
 
+        function CheckoutTotal() {
+            
+            var Subtotal = parseInt(getValue('Subtotal')),
+                Discount = parseInt(getValue('Discount')),
+                Taxtotal = parseInt(getValue('Taxtotal'));
+              document.getElementById('total').innerHTML = (Subtotal + Discount + Taxtotal);
+
+          }
+          
+        function getValue(title){
+            return parseInt(document.getElementById(title).innerHTML);
+        }
     </script>
         <section class='cartPage'>
             <div class='container'>
