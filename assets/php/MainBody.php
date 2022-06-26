@@ -56,16 +56,15 @@ class PageBody {
         
         <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css' />
         
+        <script src='$this->root/assets/js/index.js'></script>
         <script src='$this->root/assets/bootstrap/js/bootstrap.js'></script>
         <script src='$this->root/assets/bootstrap/jQuery/jQuery.js'></script>
-        <script src='$this->root/assets/js/index.js'></script>
         
         <script>
-        function moveTOCheckout(){ 
-          var total = document.getElementById('CartTotal').innerHTML;
-          window.location.href = `".$this->root."/assets/php/Services/Form/CheckoutFunction.php?isadd=true&total=`+total;  
-        }
         
+
+        function togo(url){ window.location.href = '$this->root/Pages/productDetail.php?product='+url; } 
+
         </script>
 
           </head>
@@ -174,7 +173,7 @@ class PageBody {
   }
   
   function checkOutTotalSection(){
-    $this->template = $this->template. getcheckoutTotal();
+    $this->template = $this->template. getcheckoutTotal($this->root);
   }
 }
 
